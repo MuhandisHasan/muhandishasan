@@ -1,0 +1,112 @@
+/* --- General Body and Resets --- */
+body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Lato', sans-serif; /* CHANGE THIS */
+    color: #ffffff;
+    background-color: #111;
+}
+
+/* --- The Full-Screen Hero Section (with z-index fix) --- */
+.hero-section {
+    height: 100vh; width: 100%;
+    display: flex; justify-content: center; align-items: center;
+    text-align: center; position: relative; overflow: hidden;
+    z-index: 0; /* Creates the stacking context */
+}
+
+/* --- Background Image Styling --- */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* === REPLACE THE URL HERE === */
+    background-image: url('./images/hero.webp');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    z-index: -2;
+}
+
+/* --- ELEGANT "Golden Hour" Gradient --- */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* A warm, sophisticated gradient inspired by a beach sunset */
+    background: linear-gradient(
+        -45deg, 
+        #3a3852, /* Deep Twilight Purple - Calm, Trustworthy */
+        #c56a58, /* Warm Coral/Sandstone - Enthusiasm */
+        #e6a053  /* Soft Gold - Optimism */
+    );
+    background-size: 400% 400%;
+    opacity: 0.65; /* A more subtle opacity for elegance */
+    animation: gradientAnimation 20s ease infinite; /* Slower for a calmer feel */
+}
+
+/* --- Keyframes for the Gradient Animation --- */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Content Styling & Entrance Animation --- */
+.hero-content {
+    max-width: 800px; padding: 20px;
+    animation: contentFadeInUp 1s ease-out forwards;
+}
+
+@keyframes contentFadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.headline {
+    font-family: 'Playfair Display', serif;font-style: italic; font-size: 3rem;
+    font-weight: 400; margin-bottom: 1rem; line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.sub-headline {
+    font-size: 1.2rem; font-weight: 400; line-height: 1.6;
+    margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;
+}
+
+/* --- Navigation Buttons --- */
+.nav-buttons {
+    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+}
+
+.main-menu-button {
+    display: inline-block; padding: 12px 28px; border-radius: 50px;
+    text-decoration: none; font-weight: 700; transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9); color: #1a1a1a;
+    border: 2px solid transparent; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.main-menu-button:hover {
+    background-color: transparent; color: #ffffff;
+    border: 2px solid #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .headline { font-size: 2rem; }
+    .sub-headline { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .headline { font-size: 1.8rem; }
+    .nav-buttons { flex-direction: column; align-items: center; }
+    .main-menu-button { width: 80%; }
+}
