@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <!-- === THIS IS THE NEW FONT LINK === -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -26,8 +26,97 @@
     </section>
 
     <!-- The "See My Works" and "Hear My Story" sections will be added below here later -->
-    <section id="works"></section>
-    <section id="story"></section>
+    <!-- === ADD THIS ENTIRE SECTION TO YOUR HTML FILE === -->
 
+    <!-- === REPLACE your old #works section with this new one === -->
+    <section id="works" class="portfolio-section">
+
+        <!-- The Slider Container -->
+        <div class="slider-container">
+            <div class="slider-track">
+                
+                <!-- Project 1 (Card structure is the same) -->
+                <div class="project-card" 
+                    data-image-url="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                    data-title="Project Alpha: A New Beginning"
+                    data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Project Alpha Preview">
+                    <div class="card-content">
+                        <h3>Project Alpha</h3>
+                        <p>A short, engaging description of this amazing first project.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" 
+                    data-image-url="https://images.unsplash.com/photo-1550745165-9bc0b252726a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                    data-title="Project Beta: Exploring the Unknown"
+                    data-description="Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Project Beta Preview">
+                    <div class="card-content">
+                        <h3>Project Beta</h3>
+                        <p>An exploratory project that pushed the boundaries of technology.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" 
+                    data-image-url="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                    data-title="Project Gamma: Human-Centered Design"
+                    data-description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.">
+                    <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Project Gamma Preview">
+                    <div class="card-content">
+                        <h3>Project Gamma</h3>
+                        <p>A study in creating intuitive and beautiful user experiences.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" 
+                    data-image-url="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                    data-title="Project Delta: The Power of Data"
+                    data-description="Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Project Delta Preview">
+                    <div class="card-content">
+                        <h3>Project Delta</h3>
+                        <p>Leveraging big data to create meaningful, actionable insights.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" 
+                    data-image-url="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                    data-title="Project Epsilon: Mobile First"
+                    data-description="Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.">
+                    <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Project Epsilon Preview">
+                    <div class="card-content">
+                        <h3>Project Epsilon</h3>
+                        <p>A fully responsive mobile application designed for everyone.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Slider Navigation Buttons -->
+        <button class="slider-button prev" id="prev-btn">&lt;</button>
+        <button class="slider-button next" id="next-btn">&gt;</button>
+
+        <!-- The detail view (initially hidden) - This part remains the same -->
+        <div class="project-detail-view">
+            <div class="detail-content">
+                <div class="detail-image-container">
+                    <img id="detail-image" src="" alt="Project Detail Image">
+                </div>
+                <div class="detail-text-container">
+                    <h1 id="detail-title"></h1>
+                    <p id="detail-description"></p>
+                    <button class="close-button">&larr; Back to Projects</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
