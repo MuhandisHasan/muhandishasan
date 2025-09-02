@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- === THIS IS THE NEW FONT LINK === -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -25,17 +24,16 @@
         </div>
     </section>
 
-    <!-- The "See My Works" and "Hear My Story" sections will be added below here later -->
-    <!-- === ADD THIS ENTIRE SECTION TO YOUR HTML FILE === -->
-
-    <!-- === REPLACE your old #works section with this new one === -->
     <section id="works" class="portfolio-section">
+
+        <!-- === MODIFIED: Container for dynamically generated shapes === -->
+        <div id="shape-container"></div>
 
         <!-- The Slider Container -->
         <div class="slider-container">
             <div class="slider-track">
                 
-                <!-- Project 1 (Card structure is the same) -->
+                <!-- Project 1 -->
                 <div class="project-card" 
                     data-image-url="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
                     data-title="Project Alpha: A New Beginning"
@@ -63,7 +61,7 @@
                 <div class="project-card" 
                     data-image-url="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
                     data-title="Project Gamma: Human-Centered Design"
-                    data-description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.">
+                    data-description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit.">
                     <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Project Gamma Preview">
                     <div class="card-content">
                         <h3>Project Gamma</h3>
@@ -102,7 +100,7 @@
         <button class="slider-button prev" id="prev-btn">&lt;</button>
         <button class="slider-button next" id="next-btn">&gt;</button>
 
-        <!-- The detail view (initially hidden) - This part remains the same -->
+        <!-- The detail view (initially hidden) -->
         <div class="project-detail-view">
             <div class="detail-content">
                 <div class="detail-image-container">

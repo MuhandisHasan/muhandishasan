@@ -3,7 +3,7 @@ body, html {
     margin: 0; padding: 0; height: 100%;
     font-family: 'Raleway', sans-serif;
     color: #ffffff;
-    background-color: #111;
+    background-color: #0a1929;
 }
 
 /* --- The Full-Screen Hero Section (with z-index fix) --- */
@@ -24,21 +24,13 @@ body, html {
     z-index: -2;
 }
 
-/* --- Gradient Overlay --- */
+/* --- Dark Navy Overlay --- */
 .hero-section::after {
     content: ''; position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: -1;
-    background: linear-gradient(-45deg, #006769, #40A578);
-    background-size: 400% 400%;
-    opacity: 0.7;
-    animation: gradientAnimation 20s ease infinite;
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background-color: #0a1929;
+    opacity: 0.8;
 }
 
 /* --- Content Styling & Entrance Animation --- */
@@ -55,7 +47,6 @@ body, html {
 .headline {
     font-family: 'Playfair Display', serif; font-style: italic; font-size: 3rem;
     font-weight: 400; margin-bottom: 1rem; line-height: 1.4;
-    /* text-shadow removed */
 }
 
 .sub-headline {
@@ -73,20 +64,22 @@ body, html {
     text-decoration: none; font-weight: 700; transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.9); color: #1a1a1a;
     border: 2px solid transparent;
-    /* box-shadow removed */
 }
 
 .main-menu-button:hover {
     background-color: transparent; color: #ffffff; border: 2px solid #ffffff;
     transform: translateY(-3px);
-    /* box-shadow removed */
 }
 
 
 /* --- Portfolio Section --- */
 .portfolio-section {
     height: 100vh; width: 100%; position: fixed; top: 0; left: 0;
-    background: linear-gradient(-45deg, #006769, #40A578);
+    background-color: #0a1929;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 50px 50px;
     opacity: 0; pointer-events: none;
     transform: translateY(100vh);
     transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s ease;
@@ -99,12 +92,41 @@ body, html {
     opacity: 1; pointer-events: auto; transform: translateY(0);
 }
 
+/* --- Animated Background Shapes --- */
+@keyframes floatShape {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.15; }
+    80% { opacity: 0.15; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.bg-shape {
+    position: absolute;
+    border: 2px solid #ffffff;
+    opacity: 0;
+    /* --- MODIFIED: Placed behind the slider content --- */
+    z-index: 0; 
+    animation: floatShape linear infinite;
+    /* --- NEW: All random values will be set by JS --- */
+}
+
+.bg-shape.circle { border-radius: 50%; }
+/* --- NEW: Triangle shape using clip-path --- */
+.bg-shape.triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-radius: 0; /* Override circle's border-radius if both classes are present */
+}
+
+/* --- REMOVED: All specific .shape-* classes --- */
+
 .slider-container {
     width: 80%;
     max-width: 1200px;
     overflow: hidden;
     padding: 20px 0;
     box-sizing: border-box;
+    position: relative; /* --- NEW: Ensure slider is on top of shapes --- */
+    z-index: 1;
 }
 
 .slider-track {
@@ -114,13 +136,14 @@ body, html {
 
 .slider-button {
     position: absolute; top: 50%; transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8); color: #006769;
-    border: none; border-radius: 50%; width: 50px; height: 50px;
+    background-color: #0a1929;
+    color: #fff;
+    border: solid#fff 1px; border-radius: 50%; width: 50px; height: 50px;
     font-size: 2rem; cursor: pointer; z-index: 15;
     transition: all 0.2s ease;
 }
 .slider-button:hover {
-    background-color: #fff; transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.1);
 }
 .slider-button.prev { left: 5%; }
 .slider-button.next { right: 5%; }
@@ -133,11 +156,11 @@ body, html {
     overflow: hidden; cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 0 0 calc(50% - 1rem);
-    /* box-shadow removed */
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
 }
 .project-card:hover {
     transform: translateY(-10px);
-    /* box-shadow removed */
 }
 .project-card img { width: 100%; height: 200px; object-fit: cover; }
 .card-content { padding: 1.5rem; }
@@ -153,7 +176,9 @@ body, html {
     z-index: 20;
 }
 .portfolio-section.detail-active .slider-container,
-.portfolio-section.detail-active .slider-button {
+.portfolio-section.detail-active .slider-button,
+/* --- NEW: Hide shapes when detail view is active --- */
+.portfolio-section.detail-active .bg-shape {
     opacity: 0; transition: opacity 0.3s ease;
 }
 .project-detail-view.active { opacity: 1; pointer-events: auto; }
